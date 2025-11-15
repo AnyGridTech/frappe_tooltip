@@ -1,8 +1,10 @@
+import type { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
+
 frappe.provide("frappe.tooltip");
 
 const tooltip = {
 	async showUserTips(opts: {
-		form?: any;
+		form?: FrappeForm;
 		doctype: string;
 		docnames: string | string[];
 	}) {
@@ -51,6 +53,7 @@ const tooltip = {
 				setTimeout(() => {
 					currentIdx = idx;
 					const tip = tips[idx];
+					if (!tip) return;
 					fadeDiv.innerHTML = tip.content;
 					fadeDiv.classList.remove('user-tip-fade-out');
 					fadeDiv.classList.add('user-tip-fade-in');
@@ -88,6 +91,7 @@ const tooltip = {
 			modalOpen = true;
 			currentIdx = idx;
 			const tip = tips[idx];
+			if (!tip) return;
 			const dotsHtml = tips.length > 1 ? `
 				<div id="user-tip-dots" style="margin-top:12px;text-align:center;">
 					${tips.map((_, i) => `<span class="user-tip-dot" data-dot="${i}" style="display:inline-block;width:12px;height:12px;border-radius:50%;margin:0 6px;background:${i === idx ? '#222' : '#eee'};box-shadow:0 1px 2px rgba(0,0,0,0.08);border:1px solid #bbb;cursor:pointer;transition:background 0.3s;vertical-align:middle;"></span>`).join('')}
@@ -132,4 +136,4 @@ const tooltip = {
 	}
 };
 
-frappe.tooltip = tooltip;
+Object.assign(frappe, { tooltip });

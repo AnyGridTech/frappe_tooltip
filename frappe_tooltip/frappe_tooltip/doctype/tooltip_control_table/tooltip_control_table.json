@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-15 18:07:11.226865",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tooltip_doctype",
+  "tooltip_workflow",
+  "tooltip_workflow_state"
+ ],
+ "fields": [
+  {
+   "fieldname": "tooltip_doctype",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Doctype",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "tooltip_workflow",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Workflow",
+   "options": "Workflow"
+  },
+  {
+   "fieldname": "tooltip_workflow_state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Workflow State",
+   "options": "Workflow State"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-17 05:47:56.754800",
+ "modified_by": "Administrator",
+ "module": "Frappe Tooltip",
+ "name": "Tooltip Control Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
